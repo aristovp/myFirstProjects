@@ -24,7 +24,7 @@ public class Calculator {
         if (isNumeric(stringA) && isNumeric(stringB)) {
             intA = Integer.parseInt(stringA);
             intB = Integer.parseInt(stringB);
-            if (intA > 10 || intB > 10)
+            if (intA > 10 || intB > 10 || intA < 1 || intB < 1)
                 throw new NullPointerException();
 
             switch (stringOperator) {
