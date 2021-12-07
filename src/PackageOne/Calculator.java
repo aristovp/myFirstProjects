@@ -50,7 +50,7 @@ public class Calculator {
             int intA = TranslatorToDecimal.romanToDecimal(stringA);
             int intB = TranslatorToDecimal.romanToDecimal(stringB);
 
-            if (intA > 10 || intB > 10)
+            if (intA > 10 || intB > 10 || intA < 1 || intB < 1)
                 throw new NullPointerException();
 
             switch (stringOperator) {
