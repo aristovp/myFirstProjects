@@ -21,7 +21,7 @@ public class TranslatorToRoman {
 
     public static String decimalToRoman(int number) {
         if (number < 1 || number > 101)
-            throw new NullPointerException();
+            throw new IllegalArgumentException("Результат вычисления римских чисел не может быть меньше 1");
         int l = map.floorKey(number);
         if (number == l) {
             return map.get(number);

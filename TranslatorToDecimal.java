@@ -39,7 +39,7 @@ public class TranslatorToDecimal {
                     lastNumber = 1;
                     break;
 
-                default: throw new NullPointerException();
+                default: throw new IllegalArgumentException("Введены некорректные данные");
             }}
         return decimal;
     }

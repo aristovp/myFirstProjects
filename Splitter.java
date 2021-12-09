@@ -30,7 +30,7 @@ public class Splitter {
         if (buffer.contains("*")) {
             String[] array = buffer.split("\\*");
             if (array.length != 2)
-                return;
+                throw new IllegalArgumentException("Введён неверный оператор");
 
             setNumberA(array[0]);
             setNumberB(array[1]);
@@ -39,7 +39,7 @@ public class Splitter {
         else if (buffer.contains("/")) {
             String[] array = buffer.split("/");
             if (array.length != 2)
-                return;
+                throw new IllegalArgumentException("Введён неверный оператор");
 
             setNumberA(array[0]);
             setNumberB(array[1]);
@@ -48,7 +48,7 @@ public class Splitter {
         else if (buffer.contains("+")) {
             String[] array = buffer.split("\\+");
             if (array.length != 2)
-                return;
+                throw new IllegalArgumentException("Введён неверный оператор");
 
             setNumberA(array[0]);
             setNumberB(array[1]);
@@ -57,12 +57,11 @@ public class Splitter {
         else if (buffer.contains("-")) {
             String[] array = buffer.split("-");
             if (array.length != 2)
-                return;
+                throw new IllegalArgumentException("Введён неверный оператор");
 
             setNumberA(array[0]);
             setNumberB(array[1]);
             setOperator("-");
         }
     }
-
 }

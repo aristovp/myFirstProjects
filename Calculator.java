@@ -1,7 +1,5 @@
 package PackageOne;
 
-import java.io.IOException;
-
 public class Calculator {
     private String stringA;
     private String stringB;
@@ -25,7 +23,7 @@ public class Calculator {
             intA = Integer.parseInt(stringA);
             intB = Integer.parseInt(stringB);
             if (intA > 10 || intB > 10 || intA < 1 || intB < 1)
-                throw new NullPointerException();
+                throw new IllegalArgumentException("Калькулятор должен принимать на вход числа от 1 до 10 включительно, не более.");
 
             switch (stringOperator) {
                 case "+":
@@ -41,7 +39,7 @@ public class Calculator {
                     resultInt = intA / intB;
                     break;
                 default:
-                    throw new NullPointerException();
+                    throw new IllegalArgumentException("Введён неверный оператор");
             }
             result = "" + resultInt;
         }
@@ -51,7 +49,7 @@ public class Calculator {
             int intB = TranslatorToDecimal.romanToDecimal(stringB);
 
             if (intA > 10 || intB > 10 || intA < 1 || intB < 1)
-                throw new NullPointerException();
+                throw new IllegalArgumentException("Калькулятор должен принимать на вход числа от 1 до 10 включительно, не более.");
 
             switch (stringOperator) {
                 case "+":
@@ -67,7 +65,7 @@ public class Calculator {
                     resultInt = intA / intB;
                     break;
                 default:
-                    throw new NullPointerException();
+                    throw new IllegalArgumentException("Введён неверный оператор");
             }
             result = TranslatorToRoman.decimalToRoman(resultInt);
         }
